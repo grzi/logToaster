@@ -2,8 +2,6 @@ package com.lt.ui.main;
 
 import java.io.IOException;
 
-import com.lt.persistence.exception.PersistenceException;
-
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -13,7 +11,7 @@ import javafx.stage.Stage;
 
 public class Launcher extends Application{
 
-	public static void main(String[] args) throws PersistenceException {
+	public static void main(String[] args){
 		 launch(args);
 	}
 
@@ -21,6 +19,8 @@ public class Launcher extends Application{
 	public void start(Stage primaryStage) throws Exception {
 		primaryStage.setWidth(1024);
         primaryStage.setHeight(768);
+        primaryStage.setMinWidth(800);
+        primaryStage.setMinHeight(600);
         primaryStage.setTitle("MessageManager.windowTitle");
         primaryStage.setScene(new Scene((Parent) loadFxml("/com/lt/ui/window/window.fxml"), 1024, 968));
         primaryStage.show();
